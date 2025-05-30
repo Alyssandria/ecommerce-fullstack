@@ -1,5 +1,5 @@
 import { Navigation } from "@/components/Navigation";
-import {Montserrat} from "next/font/google"
+import { Montserrat } from "next/font/google"
 import "./globals.css"
 
 const montserrat = Montserrat({
@@ -16,8 +16,10 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} antialiased`}
       >
-        <Navigation />
-        <main>{children}</main>
+        <div className="app-wrapper p-4">
+          <Navigation />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );
