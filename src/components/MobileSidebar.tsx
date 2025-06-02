@@ -39,8 +39,6 @@ const SidebarNav = [
 ]
 
 export const MobileSidebar = ({ className, ...props }: ComponentPropsWithoutRef<"div">) => {
-
-  console.log(SIDEBAR_NAVIGATION)
   const [isClicked, setIsClicked] = useState<Boolean>(false)
 
   const primaryNavButtons = SidebarNav.map(el => {
