@@ -1,8 +1,9 @@
 import { Navigation } from "@/components/Navigation";
-import { Montserrat } from "next/font/google"
+import { Poppins } from "next/font/google"
 import "./globals.css"
 
-const montserrat = Montserrat({
+const poppins = Poppins({
+  weight: "400",
   subsets: ["latin"],
 })
 
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.className} antialiased`}
+        className={`${poppins.className} antialiased`}
       >
         <div className="app-wrapper p-4">
           <Navigation />
