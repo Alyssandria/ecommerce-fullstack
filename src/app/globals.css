@@ -6,6 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-grey: var(--grey);
+  --color-light-grey: var(--light-grey);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -46,16 +48,18 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.2221 0 0);
+  --secondary: oklch(1 0 0);
+  --grey: oklch(0.4712 0 0);
+  --light-grey: oklch(0.7444 0 0);
+  --background: var(--secondary);
+  --foreground: var(--primary);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --primary-foreground: var(--secondary);
+  --secondary-foreground: var(--primary);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -117,9 +121,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   li {
     list-style-type: none
   }
+
   body {
     @apply bg-background text-foreground;
   }
