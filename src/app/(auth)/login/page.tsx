@@ -12,9 +12,18 @@ import { IconButton } from "./_components/iconButtons";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { FaApple } from "react-icons/fa6";
+import { z } from "zod";
+import { loginSchema } from "@/models/authModel";
+import { zodResolver } from "@hookform/resolvers/zod"
 
 export default function Login() {
-  const form = useForm();
+  const form = useForm<z.infer<typeof loginSchema>>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      username: "",
+      password: ""
+    }
+  });
 
   return (
     <>
