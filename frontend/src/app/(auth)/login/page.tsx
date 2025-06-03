@@ -8,13 +8,10 @@ import { Legend } from "@/components/ui/legend";
 import { useForm } from "react-hook-form";
 import { AuthInput } from "../_components/ui/authInput";
 import { Separator } from "@/components/ui/separator";
-import { IconButton } from "./_components/iconButtons";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook } from "react-icons/fa";
-import { FaApple } from "react-icons/fa6";
 import { z } from "zod";
 import { loginSchema } from "@/models/authModel";
 import { zodResolver } from "@hookform/resolvers/zod"
+import { OauthButtons } from "../_components/OauthButtons";
 
 export default function Login() {
   const form = useForm<z.infer<typeof loginSchema>>({
@@ -29,7 +26,7 @@ export default function Login() {
     <>
       <CardContent >
         <Form {...form}>
-          <form className="flex flex-col items-center justify-center gap-8">
+          <form method="POST" className="flex flex-col items-center justify-center gap-8">
             <Fieldset className="space-y-8">
 
               <Legend>Login Credentials</Legend>
@@ -83,18 +80,7 @@ export default function Login() {
             <Separator className="w-full" />
           </div>
         </div>
-
-        <div className="flex justify-between items-center w-full">
-          <IconButton>
-            <FcGoogle />
-          </IconButton>
-          <IconButton>
-            <FaApple className="fill-primary" />
-          </IconButton>
-          <IconButton>
-            <FaFacebook className="fill-[#1778F2]" />
-          </IconButton>
-        </div>
+        <OauthButtons />
       </CardFooter>
     </>
   )
