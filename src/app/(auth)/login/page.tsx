@@ -11,6 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import { IconButton } from "./_components/iconButtons";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
+import { FaApple } from "react-icons/fa6";
 
 export default function Login() {
   const form = useForm();
@@ -74,15 +75,15 @@ export default function Login() {
           </div>
         </div>
 
-        <div className="flex gap-2 justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full">
           <IconButton>
             <FcGoogle />
           </IconButton>
           <IconButton>
-            <FaFacebook className="text-2xl fill-[#1778F2]" />
+            <FaApple className="fill-primary" />
           </IconButton>
           <IconButton>
-            <FcGoogle />
+            <FaFacebook className="fill-[#1778F2]" />
           </IconButton>
         </div>
       </CardFooter>
