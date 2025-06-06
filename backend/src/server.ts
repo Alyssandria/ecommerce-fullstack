@@ -8,6 +8,4 @@ app.use(express.json());
 
 app.use(routeHandler);
 
-
-
 app.listen(CONFIG.PORT, () => console.log(`Server running at port ${CONFIG.PORT}`));

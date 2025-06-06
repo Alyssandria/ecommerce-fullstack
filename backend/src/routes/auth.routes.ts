@@ -1,10 +1,10 @@
 import { Router } from "express";
 import { APIROUTES } from "../lib/constants";
-import { loginController } from "../controllers/login.controller";
+import { registerController } from "../controllers/register.controller";
 
 const ROUTES = new APIROUTES()
 const router = Router()
 
-router.post(ROUTES.AUTH.LOGIN, loginController)
+router.post(ROUTES.AUTH.SIGNIN, registerController)
 
 export default router
